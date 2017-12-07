@@ -1,0 +1,21 @@
+JSON from post survey:
+{"1":"5","2":"5","3":"Yes"}
+
+Test API Curls
+
+users:
+  LOOKING FOR A USER
+  curl -X POST --data "first_name=baba&last_name=Chu&andrewID=qapla&major=is&studentClass=JR&password=secret&password_confirmation=secret&team_id=1" -H "Accept: application/json" "http://localhost:3001/users"
+
+sessions:
+  curl -X POST --data "andrewID=ahlam&password=secret" -H "Accept: application/json" "http://localhost:3001/sessions"
+
+surveys:
+  curl -X POST --data "survey_type=pre&response={"1":"5","2":"5","3":"Yes"}&user_id=1" -H "Accept: application/json" "http://localhost:3001/surveys"
+  curl -X POST --data "survey_type=post&response={"1":"5","2":"5","3":"Yes"}&user_id=1" -H "Accept: application/json" "http://localhost:3001/surveys"
+
+teams:
+  curl -X POST --data "name=Swimming&gender=Men&season=winter" -H "Accept: application/json" "http://localhost:3001/teams"
+
+CURL to Fetch
+http://cdenis.oct.ovh/fetch/
