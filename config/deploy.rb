@@ -1,7 +1,7 @@
 require 'bundler/capistrano'
 # require 'puma/capistrano'
 
-server 'CMUPlayerReadinessAPI.org', :web, :app, :db, primary: true
+server 'cmuisprojects.org', :web, :app, :db, primary: true
 
 set :application, 'CMUPlayerReadinessAPI'
 set :user, 'wcalat'
