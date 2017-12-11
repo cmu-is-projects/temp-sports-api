@@ -40,7 +40,7 @@ namespace :deploy do
     run "#{try_sudo} touch #{File.join(current_path,'tmp','restart.txt')}"
   end
   task :symlink_shared do
-    run "ln -s ~/apps/CMUPlayerReadinessAPI/shared/secrets.yml ~/apps/CMUPlayerReadinessAPI/releases/#{release_name}/config/"
+    run "ln -s ~/apps/CMUPlayerReadinessAPI/secrets.yml ~/apps/CMUPlayerReadinessAPI/releases/#{release_name}/config/"
   end
 end
 
