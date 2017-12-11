@@ -1,9 +1,9 @@
 require 'bundler/capistrano'
 # require 'puma/capistrano'
 
-server 'cmuisprojects.org', :web, :app, :db, primary: true
+server 'CMUPlayerReadinessAPI.org', :web, :app, :db, primary: true
 
-set :application, 'cmuisprojects'
+set :application, 'CMUPlayerReadinessAPI'
 set :user, 'wcalat'
 set :group, 'admin'
 set :deploy_to, "/home/#{user}/apps/#{application}"
@@ -40,7 +40,7 @@ namespace :deploy do
     run "#{try_sudo} touch #{File.join(current_path,'tmp','restart.txt')}"
   end
   task :symlink_shared do
-    run "ln -s ~/apps/cmuisprojects/shared/settings.yml ~/apps/cmuisprojects/releases/#{release_name}/config/"
+    run "ln -s ~/apps/CMUPlayerReadinessAPI/shared/secrets.yml ~/apps/CMUPlayerReadinessAPI/releases/#{release_name}/config/"
   end
 end
 
