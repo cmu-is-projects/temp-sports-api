@@ -28,6 +28,7 @@ test:
   
 production:
   adapter: postgresql
-  database: Sports_Application_Heroku_DB
-  pool: 5
-  timeout: 5000
+  database: <%= Rails.application.secrets.db_name %>
+  host: <%= Rails.application.secrets.db_host %>
+  user: <%= Rails.application.secrets.db_user %>
+  password: <%= Rails.application.secrets.db_pswd %>

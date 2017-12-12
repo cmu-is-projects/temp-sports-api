@@ -3,7 +3,7 @@ require 'bundler/capistrano'
 
 server 'cmuisprojects.org', :web, :app, :db, primary: true
 
-set :application, 'CMUPlayerReadinessAPI'
+set :application, 'CMUSportsAPI'
 set :user, 'wcalat'
 set :group, 'admin'
 set :deploy_to, "/home/#{user}/apps/#{application}"
@@ -11,7 +11,7 @@ set :deploy_to, "/home/#{user}/apps/#{application}"
 set :scm, 'git'
 set :git_enable_submodules, 1
 set :deploy_via, :remote_cache
-set :repository, "git@github.com:AlecHunterLam/temp-sports-api.git"
+set :repository, "git@github.com:cmu-is-projects/temp-sports-api.git"
 set :branch, 'master'
 
 set :use_sudo, false
@@ -40,7 +40,7 @@ namespace :deploy do
     run "#{try_sudo} touch #{File.join(current_path,'tmp','restart.txt')}"
   end
   task :symlink_shared do
-    run "ln -s ~/apps/CMUPlayerReadinessAPI/secrets.yml ~/apps/CMUPlayerReadinessAPI/releases/#{release_name}/config/"
+    run "ln -s /home/#{user}/apps/#{application}/secrets.yml /home/#{user}/apps/#{application}/releases/#{release_name}/config/"
   end
 end
 
